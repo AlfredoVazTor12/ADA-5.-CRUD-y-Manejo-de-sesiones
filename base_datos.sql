@@ -19,11 +19,12 @@ CREATE TABLE productos (
 
 -- Insertar datos de prueba
 INSERT INTO usuarios (nombre, correo) VALUES 
-('Carlos Mendoza', 'carlos@ejemplo.com'),
-('Ana Sofía López', 'ana@ejemplo.com');
+('Jorge Vázquez', 'correojavt@ejemplo.com'),
+('Manuel Alvarez', 'correomada@ejemplo.com');
 
 INSERT INTO productos (nombre, descripcion, precio, stock) VALUES
 ('Teclado Mecánico RGB', 'Switches rojos, retroiluminación personalizable', 1250.00, 15),
 ('Mouse Inalámbrico Gamer', 'Sensor óptico de 16000 DPI, batería recargable', 680.50, 20),
-('Monitor 24" Full HD', 'Panel IPS, 144Hz, 1ms de respuesta', 3499.00, 8),
-('Audífonos Diadema 7.1', 'Sonido envolvente con micrófono con cancelación', 920.00, 12);
+('Monitor 24" Full HD', 'Panel IPS, 144Hz, 1mils de respuesta', 3499.00, 8),
+('Audífonos Diadema 7.1', 'Sonido envolvente con micrófono con cancelación', 920.00, 12),
+('RTX 5050', 'La grafica de gama de entrada de 2025', 5600.00, 5);
