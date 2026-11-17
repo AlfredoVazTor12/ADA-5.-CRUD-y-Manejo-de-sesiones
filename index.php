@@ -2,14 +2,13 @@
 session_start();
 require_once 'conexion.php';
 
-// Obtener catálogo desde la base de datos
 $stmt = $pdo->query("SELECT * FROM productos ORDER BY id ASC");
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $usuarioActivo = $_SESSION['usuario'] ?? null;
 $carrito = $_SESSION['carrito'] ?? [];
 $mensaje = $_SESSION['mensaje'] ?? '';
-unset($_SESSION['mensaje']); // Limpiar notificación tras mostrarla
+unset($_SESSION['mensaje']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -41,7 +40,6 @@ unset($_SESSION['mensaje']); // Limpiar notificación tras mostrarla
         <div class="alerta" id="alerta-mensaje"><?= htmlspecialchars($mensaje) ?></div>
     <?php endif; ?>
 
-    <!-- SECCIÓN DE INICIO DE SESIÓN SI NO HAY USUARIO -->
     <?php if (!$usuarioActivo): ?>
         <section class="card login-box">
             <h2>Identifícate para comenzar</h2>
@@ -53,7 +51,6 @@ unset($_SESSION['mensaje']); // Limpiar notificación tras mostrarla
         </section>
     <?php else: ?>
 
-        <!-- LISTADO DE PRODUCTOS DISPONIBLES (DESDE BD) -->
         <section class="seccion">
             <h2>Catálogo de Productos</h2>
             <div class="grid-productos">
@@ -75,7 +72,6 @@ unset($_SESSION['mensaje']); // Limpiar notificación tras mostrarla
             </div>
         </section>
 
-        <!-- LISTADO Y GESTIÓN DEL CARRITO (DESDE $_SESSION) -->
         <section class="seccion card">
             <div class="carrito-header">
                 <h2>Carrito de Compras de <?= htmlspecialchars($usuarioActivo) ?></h2>
