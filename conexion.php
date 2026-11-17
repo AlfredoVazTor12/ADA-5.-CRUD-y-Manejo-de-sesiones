@@ -1,11 +1,13 @@
 <?php
-$host = 'localhost';
-$db   = 'tienda_sesiones';
-$user = 'root'; // Cambiar si tu usuario de MySQL es distinto
-$pass = '';     // Cambiar si tienes contraseña en MySQL
+$host = getenv('DB_HOST') ?: iitmlq.h.filess.io;
+$port = getenv('DB_PORT') ?: 3307;
+$db   = getenv('DB_NAME') ?: tienda_sesiones_prizeraise;
+$user = getenv('DB_USER') ?: tienda_sesiones_prizeraise;
+$pass = getenv('DB_PASS') ?: 741f5b32122a3c65a8374311449cef588affd9b9;
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
+    $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4";
+    $pdo = new PDO($dsn, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Error de conexión a la base de datos: " . $e->getMessage());
