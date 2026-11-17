@@ -1,4 +1,4 @@
-# 🛒 Carrito de Compras con Manejo de Sesiones en PHP y MySQL
+# Carrito de Compras con Manejo de Sesiones en PHP y MySQL
 
 Aplicación web desarrollada del lado del servidor utilizando **PHP** y **MySQL**, enfocada en la construcción de un carrito de compras persistente mediante sesiones (`$_SESSION`). El sistema permite conservar el nombre del usuario y gestionar los productos seleccionados durante toda la navegación.
 
