@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Ocultar automáticamente los mensajes de notificación después de 3 segundos
     const alerta = document.getElementById('alerta-mensaje');
     if (alerta) {
         setTimeout(() => {
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Validar que el nombre de usuario no contenga solo espacios en blanco
 function validarLogin() {
     const inputNombre = document.getElementById('nombre_usuario');
     if (inputNombre && inputNombre.value.trim().length < 2) {
